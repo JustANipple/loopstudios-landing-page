@@ -348,6 +348,7 @@ body {
   overflow: hidden;
   max-height: 0;
   padding-block: 0;
+  transition: all 0.25s ease-in-out;
 }
 .header .wrapper .nav .list {
   display: flex;
@@ -355,19 +356,37 @@ body {
   gap: 1rem;
   list-style: none;
 }
+.header .wrapper .nav .list li {
+  transform: translateX(-10rem);
+  opacity: 0;
+}
 .header .wrapper .nav .list li a {
   text-decoration: none;
   color: inherit;
   font-size: 1.407rem;
   text-transform: uppercase;
 }
+.header .wrapper .nav .list .slide {
+  animation: slide 0.5s ease-out forwards;
+}
 .header .wrapper .open {
   padding-block: 18.75rem;
-  max-height: 100vh;
+  max-height: 50vh;
 }
 .header .title {
   outline: 2px solid hsl(0, 0%, 100%);
   text-transform: uppercase;
   color: hsl(0, 0%, 100%);
   font-size: 2.345rem;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
 }/*# sourceMappingURL=main.css.map */
