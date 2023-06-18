@@ -17,7 +17,7 @@ icon.addEventListener("click", (e) => {
         for(let i = 0; i < listItems.length; i++) {
             setTimeout(function() {
                 listItems[i].classList.add("slide");
-            }, 150 * i);
+            }, 100 * i);
         }
         icon.setAttribute("src", xmarkUrl);
     }
