@@ -5,7 +5,8 @@
     flex-direction: column;
     background: url(../../../images/mobile/image-hero.jpg) no-repeat top/cover;
     position: relative;
-    padding: 3rem 1.5rem;
+    padding-block: 3rem;
+    padding-inline: v.$pad-inline-mob;
 
     .wrapper {
         display: flex;
@@ -28,10 +29,38 @@
         outline: 2px solid v.$white;
         text-transform: uppercase;
         color: v.$white;
-        font-size: calc(v.$fs) * 2.675;
+        font-size: clamp(0.9375rem, -4.1836rem + 29.2632vw, 2.5rem);
         padding: 1.5rem;
         padding-bottom: 1rem;
         margin-block: 10rem;
         line-height: 1;
+        max-width: 35rem;
+    }
+}
+
+@media screen and (min-width: 56.25rem) {
+    .header {
+        background-image: url(../../../images/desktop/image-hero.jpg);
+        padding-block: 4rem;
+        padding-inline: v.$pad-inline-des;
+
+        .wrapper {
+
+            .header_logo {
+                max-height: unset;
+            }
+            
+            .menu_icon {
+                display: none;
+            }
+        }
+
+        .title {
+            font-size: calc(v.$fs * 4.675);
+            max-width: 40rem;
+            padding: 2.5rem 3rem;
+            padding-bottom: 1.5rem;
+            margin-block: 8rem 6rem;
+        }
     }
 }
