@@ -12,17 +12,28 @@
 
     .creations_wrapper {
         display: flex;
+        justify-content: space-around;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 1.5rem;
 
         .creation_block {
             position: relative;
 
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                box-shadow: inset 50px 0px 50px 10px hsla(0, 0%, 0%, 0.5);
+                pointer-events: none;
+            }
+
             img {
                 height: 100%;
                 width: 100%;
-                object-fit: contain;
+                object-fit: cover;
             }
 
             .title {
@@ -31,7 +42,8 @@
                 position: absolute;
                 bottom: 0;
                 color: v.$white;
-                font-size: calc(v.$fs * 1.5);
+                font-size: clamp(1.40625rem, 1.2412rem + 0.7042vw, 1.875rem);
+                z-index: 1;
             }
         }
     }
@@ -46,6 +58,69 @@
         font-family: v.$ff-alata;
         font-size: v.$fs;
         letter-spacing: .25rem;
-        margin-block: 1rem;
+        margin-block: 2rem;
     }
+}
+
+@media screen and (min-width: 1032px) {
+    .creations {
+        display: grid;
+        align-items: baseline;
+        padding-inline: v.$pad-inline-des;
+        
+        .title {
+            grid-column: 1;
+            grid-row: 1;
+            margin-inline-end: auto;
+        }
+
+        .creations_wrapper {
+            grid-column: 1/-1;
+            grid-row: 2;
+            justify-content: space-between;
+            cursor: pointer;
+    
+            .creation_block {
+                flex-basis: 22%;
+
+                &::after {
+                    box-shadow: inset 0px -50px 50px 30px hsla(0, 0%, 0%, 0.5);
+                }
+    
+                .title {
+                    padding-inline: 2rem;
+                }
+            }
+
+            .hovered {
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: v.$white;
+                    opacity: 70%;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .btn {
+            grid-column: -1;
+            grid-row: 1;
+            margin-inline-start: auto;
+            transition: all .125s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: v.$black;
+                color: v.$white;
+            }
+        }
+    }
+
+
 }

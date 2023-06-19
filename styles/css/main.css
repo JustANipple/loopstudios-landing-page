@@ -475,7 +475,7 @@ body {
 }
 .leader .text .title {
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .leader .text .description {
   margin-block: 0;
@@ -521,17 +521,27 @@ body {
 }
 .creations .creations_wrapper {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.5rem;
 }
 .creations .creations_wrapper .creation_block {
   position: relative;
 }
+.creations .creations_wrapper .creation_block::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 50px 0px 50px 10px hsla(0, 0%, 0%, 0.5);
+  pointer-events: none;
+}
 .creations .creations_wrapper .creation_block img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .creations .creations_wrapper .creation_block .title {
   padding-inline: 1.5rem;
@@ -539,7 +549,8 @@ body {
   position: absolute;
   bottom: 0;
   color: hsl(0, 0%, 100%);
-  font-size: 1.407rem;
+  font-size: clamp(1.40625rem, 1.2412rem + 0.7042vw, 1.875rem);
+  z-index: 1;
 }
 .creations .btn {
   text-transform: uppercase;
@@ -551,5 +562,55 @@ body {
   font-family: "Alata", sans-serif;
   font-size: 0.938rem;
   letter-spacing: 0.25rem;
-  margin-block: 1rem;
+  margin-block: 2rem;
+}
+
+@media screen and (min-width: 1032px) {
+  .creations {
+    display: grid;
+    align-items: baseline;
+    padding-inline: 10rem;
+  }
+  .creations .title {
+    grid-column: 1;
+    grid-row: 1;
+    margin-inline-end: auto;
+  }
+  .creations .creations_wrapper {
+    grid-column: 1/-1;
+    grid-row: 2;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .creations .creations_wrapper .creation_block {
+    flex-basis: 22%;
+  }
+  .creations .creations_wrapper .creation_block::after {
+    box-shadow: inset 0px -50px 50px 30px hsla(0, 0%, 0%, 0.5);
+  }
+  .creations .creations_wrapper .creation_block .title {
+    padding-inline: 2rem;
+  }
+  .creations .creations_wrapper .hovered::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: hsl(0, 0%, 100%);
+    opacity: 70%;
+    z-index: 1;
+  }
+  .creations .btn {
+    grid-column: -1;
+    grid-row: 1;
+    margin-inline-start: auto;
+    transition: all 0.125s ease-in-out;
+    cursor: pointer;
+  }
+  .creations .btn:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+  }
 }/*# sourceMappingURL=main.css.map */

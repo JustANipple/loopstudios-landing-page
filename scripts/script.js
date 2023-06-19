@@ -12,6 +12,7 @@ icon.addEventListener("click", (e) => {
             item.classList.remove("slide");
         }
         icon.setAttribute("src", hamburgerUrl);
+        document.body.style.overflow = "visible";
     } else {
         menu.classList.add("open");
         for(let i = 0; i < listItems.length; i++) {
@@ -20,6 +21,7 @@ icon.addEventListener("click", (e) => {
             }, 100 * i);
         }
         icon.setAttribute("src", xmarkUrl);
+        document.body.style.overflow = "hidden";
     }
 });
 
@@ -72,4 +74,19 @@ for(let i = 0; i < titles.length; i++) {
     <h3 class="title">${titles[i]}</h3>
     `;
     creationsCont.appendChild(wrapper);
+}
+
+const blocks = document.querySelectorAll(".creation_block");
+for(const block of blocks) {
+    block.addEventListener("mouseover", () => {
+        block.classList.add("hovered");
+        block.querySelector(".title").style.color = "black";
+        block.style.transform = "translateY(-.5rem)";
+        block.style.transition = "all .125s ease-in-out";
+    });
+    block.addEventListener("mouseout", () => {
+        block.classList.remove("hovered");
+        block.querySelector(".title").style.color = "white";
+        block.style.transform = "translateY(0)";
+    });
 }
