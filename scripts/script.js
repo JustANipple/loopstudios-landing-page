@@ -71,7 +71,7 @@ for(let i = 0; i < titles.length; i++) {
     alt=""
     aria-hidden="true">
     </picture>
-    <h3 class="title">${titles[i]}</h3>
+    <p class="title">${titles[i]}</p>
     `;
     creationsCont.appendChild(wrapper);
 }
