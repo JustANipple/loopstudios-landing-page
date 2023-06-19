@@ -1,9 +1,8 @@
 @use "../abstracts/variables" as v;
 
 .creations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    justify-items: center;
     padding-inline: v.$pad-inline-mob;
 
     .title {
@@ -13,8 +12,8 @@
 
     .creations_wrapper {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1.5rem;
 
         .creation_block {
@@ -28,7 +27,7 @@
 
             .title {
                 padding-inline: v.$pad-inline-mob;
-                max-width: 5ch;
+                max-width: 9ch;
                 position: absolute;
                 bottom: 0;
                 color: v.$white;

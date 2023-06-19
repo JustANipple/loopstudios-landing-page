@@ -511,9 +511,8 @@ body {
   }
 }
 .creations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
   padding-inline: 1.5rem;
 }
 .creations .title {
@@ -522,8 +521,8 @@ body {
 }
 .creations .creations_wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 .creations .creations_wrapper .creation_block {
@@ -536,7 +535,7 @@ body {
 }
 .creations .creations_wrapper .creation_block .title {
   padding-inline: 1.5rem;
-  max-width: 5ch;
+  max-width: 9ch;
   position: absolute;
   bottom: 0;
   color: hsl(0, 0%, 100%);
