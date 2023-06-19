@@ -311,6 +311,10 @@ template {
 /* Primary */
 /* = Font = */
 /* = Spacing = */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
 }
@@ -722,6 +726,10 @@ body {
   .footer .more .list li:hover::after {
     border: 1px solid hsl(0, 0%, 100%);
     max-width: 40%;
+  }
+  .footer .more .list li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
   }
   .footer .social_copyright {
     justify-items: flex-end;

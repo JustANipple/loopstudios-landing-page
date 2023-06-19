@@ -1,5 +1,9 @@
 @use "../abstracts/variables" as v;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: v.$ff-josefin;
 }
