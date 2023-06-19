@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as v;
+
+.creations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: v.$pad-inline-mob;
+
+    .title {
+        text-transform: uppercase;
+        font-size: calc(v.$fs * 2.125);
+    }
+
+    .creations_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        .creation_block {
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+
+            .title {
+                padding-inline: v.$pad-inline-mob;
+                max-width: 5ch;
+                position: absolute;
+                bottom: 0;
+                color: v.$white;
+                font-size: calc(v.$fs * 1.5);
+            }
+        }
+    }
+
+    .btn {
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 1px solid v.$black;
+        color: v.$black;
+        padding-block: .675rem;
+        padding-inline: 2.25rem;
+        font-family: v.$ff-alata;
+        font-size: v.$fs;
+        letter-spacing: .25rem;
+        margin-block: 1rem;
+    }
+}

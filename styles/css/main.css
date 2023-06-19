@@ -509,4 +509,48 @@ body {
   .leader .text .description {
     margin: 0;
   }
+}
+.creations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 1.5rem;
+}
+.creations .title {
+  text-transform: uppercase;
+  font-size: 1.99325rem;
+}
+.creations .creations_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.creations .creations_wrapper .creation_block {
+  position: relative;
+}
+.creations .creations_wrapper .creation_block img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.creations .creations_wrapper .creation_block .title {
+  padding-inline: 1.5rem;
+  max-width: 5ch;
+  position: absolute;
+  bottom: 0;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.407rem;
+}
+.creations .btn {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 0%);
+  padding-block: 0.675rem;
+  padding-inline: 2.25rem;
+  font-family: "Alata", sans-serif;
+  font-size: 0.938rem;
+  letter-spacing: 0.25rem;
+  margin-block: 1rem;
 }/*# sourceMappingURL=main.css.map */
