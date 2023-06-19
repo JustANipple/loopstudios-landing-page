@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    padding-block: 6rem;
+    margin-block: 6.5rem 3rem;
     padding-inline: v.$pad-inline-mob;
 
     .leader_img {
@@ -23,6 +23,7 @@
         .title {
             text-transform: uppercase;
             font-size: 2rem;
+            margin-block-end: 1rem;
         }
 
         .description {
@@ -38,6 +39,7 @@
         flex-direction: row;
         align-items: flex-end;
         padding-inline: v.$pad-inline-des;
+        margin-block: 10rem 5rem;
         position: relative;
 
         .leader_img {
@@ -46,12 +48,12 @@
 
         .text {
             background-color: v.$white;
-            padding-block: 6rem 0;
+            padding-block: 4rem 0;
             padding-inline: 6.25rem 0;
             text-align: left;
-            max-width: 30rem;
+            max-width: 38rem;
             position: absolute;
-            right: 10rem;
+            right: 0rem;
 
             .title {
                 font-size: calc(v.$fs * 3);
@@ -60,7 +62,14 @@
 
             .description {
                 margin: 0;
+                max-width: 44ch;
             }
         }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .leader {
+        justify-content: center;
     }
 }

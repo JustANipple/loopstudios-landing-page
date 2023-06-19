@@ -58,7 +58,8 @@
 
 @media screen and (min-width: 56.25rem) {
     .nav {
-        position: unset;
+        position: relative;
+        z-index: 1;
         max-height: fit-content;
         background-color: transparent;
         overflow: visible;

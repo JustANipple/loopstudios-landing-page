@@ -3,7 +3,7 @@
 .header {
     display: flex;
     flex-direction: column;
-    background: url(../../../images/mobile/image-hero.jpg) no-repeat top/cover;
+    background: url(../../images/mobile/image-hero.jpg) no-repeat top/cover;
     position: relative;
     padding-block: 3rem;
     padding-inline: v.$pad-inline-mob;
@@ -40,9 +40,21 @@
 
 @media screen and (min-width: 56.25rem) {
     .header {
-        background-image: url(../../../images/desktop/image-hero.jpg);
+        background-image: url(../../images/desktop/image-hero.jpg);
         padding-block: 4rem;
         padding-inline: v.$pad-inline-des;
+
+        
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: v.$black;
+            opacity: 40%;
+        }
 
         .wrapper {
 
@@ -57,10 +69,12 @@
 
         .title {
             font-size: calc(v.$fs * 4.675);
-            max-width: 40rem;
+            max-width: 35rem;
             padding: 2.5rem 3rem;
             padding-bottom: 1.5rem;
             margin-block: 8rem 6rem;
+            position: relative;
+            z-index: 1;
         }
     }
 }

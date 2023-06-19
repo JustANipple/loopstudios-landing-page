@@ -1,0 +1,122 @@
+@use "../abstracts/variables" as v;
+
+.footer {
+    background-color: v.$black;
+    color: v.$white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 3rem;
+
+    .more {
+        display: grid;
+        row-gap: .5rem;
+
+        .footer_logo {
+            max-height: 1.5rem;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            
+            li {
+                margin-block: 1.25rem;
+                font-family: v.$ff-alata;
+            }
+        }
+    }
+
+    .social_copyright {
+        display: grid;
+        justify-items: center;
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .copyright {
+            color: v.$dark-gray;
+            font-family: v.$ff-alata;
+            font-size: v.$fs;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-block: 2.5rem;
+        padding-inline: 10rem;
+
+        .more {
+
+            //.footer_logo{}
+
+            .list {
+                display: flex;
+                gap: 2rem;
+
+                li {
+                    margin: 0;
+                    position: relative;
+                    cursor: pointer;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -1rem;
+                        max-width: 0;
+                        margin-inline: auto;
+                        border: 0px solid v.$white;
+                        transition: all .125s ease-in-out;
+                    }
+    
+                    &:hover::after {
+                        border: 1px solid v.$white;
+                        max-width: 40%;
+                    }
+                }
+                
+            }
+        }
+
+        .social_copyright {
+            justify-items: flex-end;
+
+            .list {
+
+                li {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: -.125rem;
+                        max-width: 0;
+                        margin-inline: auto;
+                        border: 0px solid v.$white;
+                        transition: all .125s ease-in-out;
+                    }
+    
+                    &:hover::after {
+                        border: 1px solid v.$white;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

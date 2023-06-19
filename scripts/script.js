@@ -80,13 +80,10 @@ const blocks = document.querySelectorAll(".creation_block");
 for(const block of blocks) {
     block.addEventListener("mouseover", () => {
         block.classList.add("hovered");
-        block.querySelector(".title").style.color = "black";
-        block.style.transform = "translateY(-.5rem)";
-        block.style.transition = "all .125s ease-in-out";
+        block.querySelector(".title").classList.add("colored");
     });
     block.addEventListener("mouseout", () => {
         block.classList.remove("hovered");
-        block.querySelector(".title").style.color = "white";
-        block.style.transform = "translateY(0)";
+        block.querySelector(".title").classList.remove("colored");
     });
 }
