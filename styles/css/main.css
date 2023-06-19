@@ -678,6 +678,10 @@ body {
   margin-block: 1.25rem;
   font-family: "Alata", sans-serif;
 }
+.footer .more .list li a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
 .footer .social_copyright {
   display: grid;
   justify-items: center;
@@ -726,10 +730,6 @@ body {
   .footer .more .list li:hover::after {
     border: 1px solid hsl(0, 0%, 100%);
     max-width: 40%;
-  }
-  .footer .more .list li a {
-    text-decoration: none;
-    color: hsl(0, 0%, 100%);
   }
   .footer .social_copyright {
     justify-items: flex-end;

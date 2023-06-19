@@ -25,6 +25,11 @@
             li {
                 margin-block: 1.25rem;
                 font-family: v.$ff-alata;
+
+                a {
+                    text-decoration: none;
+                    color: v.$white;
+                }
             }
         }
     }
@@ -85,11 +90,6 @@
                     &:hover::after {
                         border: 1px solid v.$white;
                         max-width: 40%;
-                    }
-
-                    a {
-                        text-decoration: none;
-                        color: v.$white;
                     }
                 }
                 
